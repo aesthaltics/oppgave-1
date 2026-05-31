@@ -1,0 +1,154 @@
+body {
+	height: 300vh;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: column;
+	font-family: "Inter", sans-serif;
+}
+
+header {
+	position: fixed;
+	height: 100px;
+	background-color: transparent;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: right;
+	gap: 10px;
+
+	z-index: 99999;
+}
+
+header button {
+	background-color: transparent;
+	color: antiquewhite;
+	border: none;
+	font-size: 20px;
+	height: min-content;
+	padding: 1em 0;
+}
+
+.hero-container {
+	height: 300svh;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.hero {
+	width: 90%;
+	height: 100vh;
+	background-color: black;
+	border: 1px solid red;
+	display: flex;
+	position: sticky;
+	top: 0;
+	justify-content: center;
+	overflow-x: clip;
+}
+.hero-image {
+	height: 100vh;
+	object-view-box: xywh(0% 0% 100% 100%);
+	max-width: none;
+	animation-timeline: scroll(nearest block);
+	animation-name: hero-animation;
+	opacity: 100%;
+}
+
+@keyframes hero-animation {
+	0% {
+		object-view-box: xywh(0% 0% 100% 100%);
+		opacity: 100%;
+	}
+	80% {
+		opacity: 90%;
+	}
+	100% {
+		object-view-box: xywh(10% 5% 90% 80%);
+		opacity: 0%;
+	}
+}
+
+.hero-button {
+	width: 80%;
+
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 5em;
+	color: transparent;
+	background-image: linear-gradient(
+		to right,
+		rgb(237, 237, 237),
+		rgb(245, 240, 240)
+	);
+	background-clip: text;
+	border: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 5px;
+	letter-spacing: -2px;
+	animation-name: hero-animation;
+	animation-timeline: scroll(nearest block);
+	border-radius: 10px;
+}
+
+.hero-button:hover {
+	backdrop-filter: blur(10px);
+	border-image: linear-gradient(to right, white, lightgray) 1;
+	border-radius: 5px; /* this doesn't work */
+	border-width: 3px;
+	border-style: solid;
+}
+
+.dashboard {
+	background-color: black;
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+}
+
+.destination-list {
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+}
+
+.destination-thumbnail {
+	flex-direction: column;
+	height: 100%;
+	width: 100%;
+	background-image: url(public/images/rome-small.jpg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	opacity: 90%;
+	transition: all 0.1s;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+}
+
+.destination-thumbnail-container {
+	display: inline-block;
+	position: relative;
+	overflow: clip;
+	height: 200px;
+	width: 200px;
+	border-radius: 10px;
+	color: #fffe;
+	font-size: 3em;
+	font-weight: 700;
+	letter-spacing: 3px;
+	background: black;
+}
+
+.destination-thumbnail-container:hover .destination-thumbnail,
+.destination-thumbnail-container:focus .destination-thumbnail {
+	opacity: 100;
+	transform: scale(1.2);
+}
