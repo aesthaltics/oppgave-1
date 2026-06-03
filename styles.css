@@ -4,16 +4,11 @@ body {
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-	font-family: "Inter", sans-serif;
+  font-family: "Inter", sans-serif;
   background-color: black;
-  scrollbar-width: 0px;
 }
 
-html {
-  scrollbar-width: 0px;
-}
-
-html::-webkit-scrollbar {
+*::-webkit-scrollbar {
   display: none;
 }
 
@@ -73,11 +68,12 @@ header {
   opacity: 100%;
 }
 .hero-image {
+  view-timeline-name: --image-timeline;
   width: 100%;
   height: auto;
   object-view-box: xywh(0% 0% 100% 100%);
   animation-name: hero-image-animation;
-  animation-timeline: view();
+  animation-timeline: --image-timeline;
   animation-fill-mode: forwards;
   animation-iteration-count: 1;
   max-width: none;
@@ -97,6 +93,15 @@ header {
   100% {
     /* transform: scale(1.2); */
     /* object-view-box: xywh(20% 10% 60% 60%); */
+    opacity: 0%;
+  }
+}
+
+@keyframes hero-button-animation {
+  0% {
+    opacity: 100%;
+  }
+  100% {
     opacity: 0%;
   }
 }
@@ -122,6 +127,7 @@ header {
 
 .hero-button {
   width: 80%;
+  opacity: 100%;
 
   font-optical-sizing: auto;
   font-weight: 400;
@@ -141,9 +147,10 @@ header {
   transform: translate(-50%, -50%);
   padding: 5px;
   letter-spacing: -2px;
-  animation-name: hero-animation;
-  animation-timeline: scroll(nearest block);
+
   border-radius: 10px;
+  animation: hero-button-animation;
+  animation-timeline: --image-timeline;
 }
 
 .hero-button:hover {
@@ -157,20 +164,22 @@ header {
   text-underline-offset: 4px;
   cursor: pointer;
 }
-
 .dashboard {
   display: none;
   opacity: 0%;
-	position: relative;
+  position: relative;
   width: 100%;
+  height: 100vh;
   /* border: 1px solid red; */
   display: flex;
   flex-direction: column;
   overflow-x: clip;
-	animation: dashboard-animation;
+  overflow-y: scroll;
+
+  animation: dashboard-animation;
   animation-timeline: view();
   animation-fill-mode: forwards;
-	animation-range: entry 80%;
+  animation-range: entry 80%;
 }
 
 .dashboard::before {
