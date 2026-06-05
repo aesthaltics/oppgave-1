@@ -333,6 +333,13 @@ header {
   text-align: left;
   padding: 10px 20px;
 }
+
+.auto-complete-suggestion:hover {
+  background-color: rgb(0 0 0 / 5%);
+  text-decoration: underline;
+  color: blue;
+  cursor: pointer;
+}
 /*
 TODO:
  accessability: remove motion if user preffers it
