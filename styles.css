@@ -252,19 +252,37 @@ header {
 .search-bar {
   box-sizing: border-box;
   font-weight: 500;
-  height: fit-content;
-  width: 70%;
+  height: 70px;
+  width: 100%;
   padding: 10px 30px;
   border-radius: 100px;
+  border-bottom: 0px;
+  border: 0px;
+}
+
+.search-bar:has(+ .auto-complete) {
+  border-radius: 0px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.search-bar:focus,
+.search-bar:active {
+  outline: 0px;
+  border: 0px;
 }
 
 .search-bar::-webkit-search-cancel-button {
   display: none;
 }
 
+.search-input-container {
+  width: 70%;
+}
+
 .search-button {
   font-weight: 500;
-  height: 100%;
+  height: 70px;
   border-radius: 100px;
   padding: 10px 40px;
   color: rgb(90, 90, 90);
@@ -276,6 +294,7 @@ header {
   display: flex;
   justify-content: space-around;
   align-content: center;
+  flex-direction: row;
 }
 
 .destination-card-grid {
@@ -293,6 +312,32 @@ header {
   width: 100%;
   gap: 10px;
   justify-content: space-around;
+}
+
+.auto-complete {
+  display: none;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.search-bar:focus + .auto-complete {
+  display: block;
+}
+
+.auto-complete {
+  width: 100%;
+  height: fit-content;
+  background-color: white;
+}
+
+.auto-complete:not(:empty) {
+  display: block;
+}
+
+.auto-complete-suggestion {
+  color: black;
+  text-align: left;
+  padding: 10px 20px;
 }
 /*
 TODO:
