@@ -26,13 +26,30 @@ nav {
   z-index: 99999;
 }
 
-nav button {
+.nav-button-container {
   background-color: transparent;
   color: antiquewhite;
   border: none;
   font-size: 20px;
   height: min-content;
   padding: 1em 0;
+  text-align: center;
+}
+
+.nav-button-container button {
+  background-color: transparent;
+  color: antiquewhite;
+  border-left: 2px solid transparent;
+  border-right: 2px solid transparent;
+  border-top: 0px;
+  border-bottom: 0px;
+  font-weight: 300;
+}
+
+.nav-button-container button:hover {
+  border-left: 2px solid white;
+  border-right: 2px solid white;
+  cursor: pointer;
 }
 
 header {
