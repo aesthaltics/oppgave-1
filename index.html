@@ -1,248 +1,265 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <script>
-      ((g) => {
-        var h,
-          a,
-          k,
-          p = "The Google Maps JavaScript API",
-          c = "google",
-          l = "importLibrary",
-          q = "__ib__",
-          m = document,
-          b = window;
-        b = b[c] || (b[c] = {});
-        var d = b.maps || (b.maps = {}),
-          r = new Set(),
-          e = new URLSearchParams(),
-          u = () =>
-            h ||
-            (h = new Promise(async (f, n) => {
-              await (a = m.createElement("script"));
-              e.set("libraries", [...r] + "");
-              for (k in g)
-                e.set(
-                  k.replace(/[A-Z]/g, (t) => "_" + t[0].toLowerCase()),
-                  g[k],
-                );
-              e.set("callback", c + ".maps." + q);
-              a.src = `https://maps.${c}apis.com/maps/api/js?` + e;
-              d[q] = f;
-              a.onerror = () => (h = n(Error(p + " could not load.")));
-              a.nonce = m.querySelector("script[nonce]")?.nonce || "";
-              m.head.append(a);
-            }));
-        d[l]
-          ? console.warn(p + " only loads once. Ignoring:", g)
-          : (d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)));
-      })({
-        key: "AIzaSyC4fbFEvfDBYPF8abFRtTEBnIrYPR0fyKE",
-        v: "weekly",
-        // Use the 'v' parameter to indicate the version to use (weekly, beta, alpha, etc.).
-        // Add other bootstrap parameters as needed, using camel case.
-      });
-    </script>
+		<script>
+			((g) => {
+				var h,
+					a,
+					k,
+					p = "The Google Maps JavaScript API",
+					c = "google",
+					l = "importLibrary",
+					q = "__ib__",
+					m = document,
+					b = window;
+				b = b[c] || (b[c] = {});
+				var d = b.maps || (b.maps = {}),
+					r = new Set(),
+					e = new URLSearchParams(),
+					u = () =>
+						h ||
+						(h = new Promise(async (f, n) => {
+							await (a = m.createElement("script"));
+							e.set("libraries", [...r] + "");
+							for (k in g)
+								e.set(
+									k.replace(
+										/[A-Z]/g,
+										(t) => "_" + t[0].toLowerCase(),
+									),
+									g[k],
+								);
+							e.set("callback", c + ".maps." + q);
+							a.src =
+								`https://maps.${c}apis.com/maps/api/js?` + e;
+							d[q] = f;
+							a.onerror = () =>
+								(h = n(Error(p + " could not load.")));
+							a.nonce =
+								m.querySelector("script[nonce]")?.nonce || "";
+							m.head.append(a);
+						}));
+				d[l]
+					? console.warn(p + " only loads once. Ignoring:", g)
+					: (d[l] = (f, ...n) =>
+							r.add(f) && u().then(() => d[l](f, ...n)));
+			})({
+				key: "AIzaSyC4fbFEvfDBYPF8abFRtTEBnIrYPR0fyKE",
+				v: "weekly",
+				// Use the 'v' parameter to indicate the version to use (weekly, beta, alpha, etc.).
+				// Add other bootstrap parameters as needed, using camel case.
+			});
+		</script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-      rel="stylesheet"
-    />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+			rel="stylesheet"
+		/>
 
-    <link rel="stylesheet" href="reset.css" />
-    <link rel="stylesheet" href="styles.css" />
+		<link rel="stylesheet" href="reset.css" />
+		<link rel="stylesheet" href="styles.css" />
 
-    <script src="index.js" type="module"></script>
-    <title>Document</title>
-  </head>
-  <body>
-    <nav>
-      <div class="nav-button-container">
-        <button>click me</button>
-      </div>
-      <div class="nav-button-container">
-        <button>click me</button>
-      </div>
-      <div class="nav-button-container">
-        <button>click me</button>
-      </div>
-      <div class="nav-button-container">
-        <button>click me</button>
-      </div>
-    </nav>
-    <section class="hero-container">
-      <div class="hero">
-        <img class="hero-image" src="./public/images/hero.jpg" alt="hero" />
+		<script src="index.js" type="module"></script>
+		<title>Document</title>
+	</head>
+	<body>
+		<nav>
+			<div class="nav-button-container">
+				<button>click me</button>
+			</div>
+			<div class="nav-button-container">
+				<button>click me</button>
+			</div>
+			<div class="nav-button-container">
+				<button>click me</button>
+			</div>
+			<div class="nav-button-container">
+				<button>click me</button>
+			</div>
+		</nav>
+		<section class="hero-container">
+			<div class="hero">
+				<img
+					class="hero-image"
+					src="./public/images/hero.jpg"
+					alt="hero"
+				/>
 
-        <button class="hero-button">BEGIN YOUR JOURNEY</button>
-      </div>
-    </section>
+				<button class="hero-button">BEGIN YOUR JOURNEY</button>
+			</div>
+		</section>
 
-    <section class="dashboard">
-      <img
-        class="dashboard-background"
-        src="./public/images/beach-background-compressed.webp"
-        alt="background image of beach"
-      />
+		<section class="dashboard">
+			<img
+				class="dashboard-background"
+				src="./public/images/beach-background-compressed.webp"
+				alt="background image of beach"
+			/>
 
-      <header>
-        <h1>A Sea of Opportunities</h1>
-        <div class="search-container">
-          <div class="search-input-container">
-            <input
-              name="destination-search"
-              type="search"
-              class="search-bar"
-              placeholder="search for destination"
-            />
+			<header>
+				<h1>A Sea of Opportunities</h1>
+				<div class="search-container">
+					<div class="search-input-container">
+						<input
+							name="destination-search"
+							type="search"
+							class="search-bar"
+							placeholder="search for destination"
+							spellcheck="false"
+							autocomplete="off"
+						/>
 
-            <!-- <div class="auto-complete">
+						<!-- <div class="auto-complete">
               <div style="color: black" class="auto-complete-suggestion">
                 Uurainen: 41230 Uurainen, Finland
               </div>
             </div> -->
-          </div>
-        </div>
-      </header>
-      <section class="destination-card-grid">
-        <section class="destination-card-row">
-          <div class="destination-thumbnail-container">
-            <div class="destination-thumbnail">ROME</div>
-          </div>
-          <div class="destination-thumbnail-container">
-            <div class="destination-thumbnail">ROME</div>
-          </div>
-          <div class="destination-thumbnail-container">
-            <div class="destination-thumbnail">ROME</div>
-          </div>
-          <div class="destination-thumbnail-container">
-            <div class="destination-thumbnail">ROME</div>
-          </div>
-        </section>
-        <section class="destination-card-row">
-          <div class="destination-thumbnail-container">
-            <div class="destination-thumbnail">ROME</div>
-          </div>
-          <div class="destination-thumbnail-container">
-            <div class="destination-thumbnail">ROME</div>
-          </div>
-          <div class="destination-thumbnail-container">
-            <div class="destination-thumbnail">ROME</div>
-          </div>
-          <div class="destination-thumbnail-container">
-            <div class="destination-thumbnail">ROME</div>
-          </div>
-        </section>
-        <section class="destination-card-row">
-          <div class="destination-thumbnail-container">
-            <div class="destination-thumbnail">ROME</div>
-          </div>
-          <div class="destination-thumbnail-container">
-            <div class="destination-thumbnail">ROME</div>
-          </div>
-          <div class="destination-thumbnail-container">
-            <div class="destination-thumbnail">ROME</div>
-          </div>
-          <div class="destination-thumbnail-container">
-            <div class="destination-thumbnail">ROME</div>
-          </div>
-        </section>
-        <section class="destination-card-row">
-          <div class="destination-thumbnail-container">
-            <div class="destination-thumbnail">ROME</div>
-          </div>
-          <div class="destination-thumbnail-container">
-            <div class="destination-thumbnail">ROME</div>
-          </div>
-          <div class="destination-thumbnail-container">
-            <div class="destination-thumbnail">ROME</div>
-          </div>
-          <div class="destination-thumbnail-container">
-            <div class="destination-thumbnail">ROME</div>
-          </div>
-        </section>
-        <section class="destination-card-row">
-          <div class="destination-thumbnail-container">
-            <div class="destination-thumbnail">ROME</div>
-          </div>
-          <div class="destination-thumbnail-container">
-            <div class="destination-thumbnail">ROME</div>
-          </div>
-          <div class="destination-thumbnail-container">
-            <div class="destination-thumbnail">ROME</div>
-          </div>
-          <div class="destination-thumbnail-container">
-            <div class="destination-thumbnail">ROME</div>
-          </div>
-        </section>
-        <section class="destination-card-row">
-          <div class="destination-thumbnail-container">
-            <div class="destination-thumbnail">ROME</div>
-          </div>
-          <div class="destination-thumbnail-container">
-            <div class="destination-thumbnail">ROME</div>
-          </div>
-          <div class="destination-thumbnail-container">
-            <div class="destination-thumbnail">ROME</div>
-          </div>
-          <div class="destination-thumbnail-container">
-            <div class="destination-thumbnail">ROME</div>
-          </div>
-        </section>
-        <section class="destination-card-row">
-          <div class="destination-thumbnail-container">
-            <div class="destination-thumbnail">ROME</div>
-          </div>
-          <div class="destination-thumbnail-container">
-            <div class="destination-thumbnail">ROME</div>
-          </div>
-          <div class="destination-thumbnail-container">
-            <div class="destination-thumbnail">ROME</div>
-          </div>
-          <div class="destination-thumbnail-container">
-            <div class="destination-thumbnail">ROME</div>
-          </div>
-        </section>
-      </section>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempor
-        nunc mauris, sit amet placerat tortor lobortis dapibus. Nam lectus eros,
-        maximus ac magna vel, congue consequat eros. Fusce id pretium diam. Cras
-        sit amet pharetra ante. Sed quis commodo quam, vel facilisis ipsum.
-        Vestibulum sodales iaculis arcu, et fringilla nisi ullamcorper sed.
-        Donec interdum sit amet est non accumsan. Donec non augue feugiat,
-        fermentum nunc non, convallis est. Cras vel ligula nec odio faucibus
-        ultricies. Sed vulputate tortor eget pretium convallis. Cras interdum
-        elit eget mi porta suscipit. Morbi ut velit diam. Etiam finibus eros et
-        efficitur rutrum. Quisque viverra metus ac eleifend imperdiet. Quisque
-        pretium ut purus vitae tempus. Duis varius risus congue velit faucibus,
-        sed interdum purus consectetur.
-      </p>
-      <p>
-        Cras volutpat velit non mi sagittis condimentum. Cras tempor aliquet
-        turpis sed pretium. Nunc aliquet sodales turpis quis ultrices. Duis
-        auctor accumsan enim, quis maximus ex malesuada a. Donec a felis ut erat
-        tempus euismod non vel neque. Proin lectus massa, sagittis at imperdiet
-        nec, consequat ut neque. Sed vel placerat neque, vel varius urna.
-        Vivamus interdum euismod urna a accumsan. Orci varius natoque penatibus
-        et magnis dis parturient montes, nascetur ridiculus mus.
-      </p>
-      <p>
-        Nulla rhoncus aliquam mauris, eu pretium dolor auctor in. Maecenas a
-        sollicitudin dolor, eget commodo quam. Proin et dui sed ligula vulputate
-        egestas. Quisque eget augue vitae purus placerat pharetra. Aliquam
-        rhoncus convallis lorem, sed facilisis odio blandit scelerisque. Vivamus
-        viverra urna ac nulla interdum, eget ullamcorper leo maximus. Mauris nec
-        feugiat enim. Nam congue, dui sit amet vestibulum posuere, leo mauris
-        fermentum lorem, eget bibendum velit nunc quis leo.
-      </p>
-    </section>
-    <footer>footer</footer>
-  </body>
+					</div>
+				</div>
+			</header>
+			<section class="destination-card-grid">
+				<section class="destination-card-row">
+					<div class="destination-thumbnail-container">
+						<div class="destination-thumbnail">ROME</div>
+					</div>
+					<div class="destination-thumbnail-container">
+						<div class="destination-thumbnail">ROME</div>
+					</div>
+					<div class="destination-thumbnail-container">
+						<div class="destination-thumbnail">ROME</div>
+					</div>
+					<div class="destination-thumbnail-container">
+						<div class="destination-thumbnail">ROME</div>
+					</div>
+				</section>
+				<section class="destination-card-row">
+					<div class="destination-thumbnail-container">
+						<div class="destination-thumbnail">ROME</div>
+					</div>
+					<div class="destination-thumbnail-container">
+						<div class="destination-thumbnail">ROME</div>
+					</div>
+					<div class="destination-thumbnail-container">
+						<div class="destination-thumbnail">ROME</div>
+					</div>
+					<div class="destination-thumbnail-container">
+						<div class="destination-thumbnail">ROME</div>
+					</div>
+				</section>
+				<section class="destination-card-row">
+					<div class="destination-thumbnail-container">
+						<div class="destination-thumbnail">ROME</div>
+					</div>
+					<div class="destination-thumbnail-container">
+						<div class="destination-thumbnail">ROME</div>
+					</div>
+					<div class="destination-thumbnail-container">
+						<div class="destination-thumbnail">ROME</div>
+					</div>
+					<div class="destination-thumbnail-container">
+						<div class="destination-thumbnail">ROME</div>
+					</div>
+				</section>
+				<section class="destination-card-row">
+					<div class="destination-thumbnail-container">
+						<div class="destination-thumbnail">ROME</div>
+					</div>
+					<div class="destination-thumbnail-container">
+						<div class="destination-thumbnail">ROME</div>
+					</div>
+					<div class="destination-thumbnail-container">
+						<div class="destination-thumbnail">ROME</div>
+					</div>
+					<div class="destination-thumbnail-container">
+						<div class="destination-thumbnail">ROME</div>
+					</div>
+				</section>
+				<section class="destination-card-row">
+					<div class="destination-thumbnail-container">
+						<div class="destination-thumbnail">ROME</div>
+					</div>
+					<div class="destination-thumbnail-container">
+						<div class="destination-thumbnail">ROME</div>
+					</div>
+					<div class="destination-thumbnail-container">
+						<div class="destination-thumbnail">ROME</div>
+					</div>
+					<div class="destination-thumbnail-container">
+						<div class="destination-thumbnail">ROME</div>
+					</div>
+				</section>
+				<section class="destination-card-row">
+					<div class="destination-thumbnail-container">
+						<div class="destination-thumbnail">ROME</div>
+					</div>
+					<div class="destination-thumbnail-container">
+						<div class="destination-thumbnail">ROME</div>
+					</div>
+					<div class="destination-thumbnail-container">
+						<div class="destination-thumbnail">ROME</div>
+					</div>
+					<div class="destination-thumbnail-container">
+						<div class="destination-thumbnail">ROME</div>
+					</div>
+				</section>
+				<section class="destination-card-row">
+					<div class="destination-thumbnail-container">
+						<div class="destination-thumbnail">ROME</div>
+					</div>
+					<div class="destination-thumbnail-container">
+						<div class="destination-thumbnail">ROME</div>
+					</div>
+					<div class="destination-thumbnail-container">
+						<div class="destination-thumbnail">ROME</div>
+					</div>
+					<div class="destination-thumbnail-container">
+						<div class="destination-thumbnail">ROME</div>
+					</div>
+				</section>
+			</section>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+				Maecenas tempor nunc mauris, sit amet placerat tortor lobortis
+				dapibus. Nam lectus eros, maximus ac magna vel, congue consequat
+				eros. Fusce id pretium diam. Cras sit amet pharetra ante. Sed
+				quis commodo quam, vel facilisis ipsum. Vestibulum sodales
+				iaculis arcu, et fringilla nisi ullamcorper sed. Donec interdum
+				sit amet est non accumsan. Donec non augue feugiat, fermentum
+				nunc non, convallis est. Cras vel ligula nec odio faucibus
+				ultricies. Sed vulputate tortor eget pretium convallis. Cras
+				interdum elit eget mi porta suscipit. Morbi ut velit diam. Etiam
+				finibus eros et efficitur rutrum. Quisque viverra metus ac
+				eleifend imperdiet. Quisque pretium ut purus vitae tempus. Duis
+				varius risus congue velit faucibus, sed interdum purus
+				consectetur.
+			</p>
+			<p>
+				Cras volutpat velit non mi sagittis condimentum. Cras tempor
+				aliquet turpis sed pretium. Nunc aliquet sodales turpis quis
+				ultrices. Duis auctor accumsan enim, quis maximus ex malesuada
+				a. Donec a felis ut erat tempus euismod non vel neque. Proin
+				lectus massa, sagittis at imperdiet nec, consequat ut neque. Sed
+				vel placerat neque, vel varius urna. Vivamus interdum euismod
+				urna a accumsan. Orci varius natoque penatibus et magnis dis
+				parturient montes, nascetur ridiculus mus.
+			</p>
+			<p>
+				Nulla rhoncus aliquam mauris, eu pretium dolor auctor in.
+				Maecenas a sollicitudin dolor, eget commodo quam. Proin et dui
+				sed ligula vulputate egestas. Quisque eget augue vitae purus
+				placerat pharetra. Aliquam rhoncus convallis lorem, sed
+				facilisis odio blandit scelerisque. Vivamus viverra urna ac
+				nulla interdum, eget ullamcorper leo maximus. Mauris nec feugiat
+				enim. Nam congue, dui sit amet vestibulum posuere, leo mauris
+				fermentum lorem, eget bibendum velit nunc quis leo.
+			</p>
+		</section>
+		<footer>footer</footer>
+	</body>
 </html>
 <img src="" alt="" />
